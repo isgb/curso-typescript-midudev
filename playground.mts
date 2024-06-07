@@ -176,3 +176,5 @@ const hero : Heroe = {
     name: 'Spiderman',
     age: 30
 }
+
+//Interfaces
