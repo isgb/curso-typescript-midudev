@@ -165,16 +165,52 @@
 // })
 /**************************************** */
 //Interfaces
-type Heroe = {
+interface Heroe {
     id: string,
     name: string,
-    age:number
+    age:number,
+    saludar: () => void
 }
 
 const hero : Heroe = {
     id: '1',
     name: 'Spiderman',
-    age: 30
+    age: 30,
+    saludar: () => {
+        console.log('Hola');
+    }
 }
 
-//Interfaces
+//interfaz anidada
+interface Producto {
+    id: number,
+    nombre:string,
+    quantity: number
+}
+
+interface CarritoDeCompras{
+    totalPrice: number,
+    // productos: Producto[]
+    productos: (Producto | Zapatilla)[]
+}
+
+// interface CarritoOps {
+//     add: (product: Producto) => void,
+//     remove: (id: number) => void,
+//     clear: () => void
+// }
+
+const carrito: CarritoDeCompras= {
+    totalPrice: 30,
+    productos: [
+        {
+            id:1,
+            nombre: 'Producto 1',
+            quantity:1
+        }
+    ]
+}
+
+interface Zapatilla extends Producto{
+    talla: number
+}
