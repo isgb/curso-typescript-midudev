@@ -163,6 +163,7 @@
 // data.items.map(repo => {
 //     console.log(repo); 
 // })
+
 /**************************************** */
 //Interfaces
 interface Heroe {
@@ -217,3 +218,5 @@ interface Zapatilla extends Producto{
 
 //interfaces: definir un objeto, o la forma de una clase, beneficia en la fusion de decalaraciones  (Producto | Zapatilla)[]
 //types: alias de tipos primitivos, definir tuplas, definir uniones, sobrecargar funciones 
+
+/**************************************** */
