@@ -36,3 +36,51 @@
 // if(canvas instanceof HTMLCanvasElement){
 //     const ctx = canvas.getContext('2d');
 // }
+
+/**************************************** */
+//NARROWING -- typeof con los objetos
+// function mostrarLongitud(objeto: number | string){
+//     if(typeof objeto === 'string'){
+//         return objeto.length
+//     }
+
+//     return objeto.toString().length
+// }
+
+// mostrarLongitud('1')
+
+interface Mario{
+    company: string,
+    nombre: string,
+    saltar: () => void
+}
+
+interface Sonic{
+    company: string,
+    nombre: string,
+    correr: () => void
+}
+
+type Personaje = Mario | Sonic
+
+//type Guard
+// la función determina si es Sonic o no
+function checkIsSonic(personaje: Personaje): personaje is Sonic{
+    return (personaje as Sonic).correr !== undefined
+}
+
+function jugar(personaje: Personaje){
+    if(checkIsSonic(personaje)){
+        personaje.correr()
+    }
+}
+
+function fn(x:string | number){
+    if(typeof x === 'string'){
+        x.toUpperCase()
+    }else if(typeof x === 'number'){
+        x.toFixed(2)
+    }else {
+        x
+    }
+}
